@@ -1,0 +1,635 @@
+﻿# Division template historical names system. Is a new method of naming the divisions based on the names-group assigned to it's template.
+# If we run out of all historical names, the names will be assigned in the old way.
+#
+# Each group has a made up tag. Use it if you want to append more, or replace existing names with the extra txt files (modding).
+#
+# for_countries - lists all countries that can use it. If empty, or entire tag is missing, all countries in the world can use it.
+#
+# can_use - is a trigger that locks/unlocks the group under specific circumstances. The trigger is in a country scope.
+#
+# division_types - is a list of tokens to corresponding unit types. A player can in fact use any group of names for a div.template
+#                  however this tag is a helper for an automated choice (for AI, or if the group must switch on it's own, because
+#                  for example the current one is no longer available due to the can_use trigger saying so).
+#                  In automated choice, the division template must have at least 1 of the following types for it to be chosen.
+#
+# fallback_name - Is going to be used if we run out of the scripted historical names. If you want to use the old division naming
+#                 mechanics to be used for fallbacks, then just skip this option.
+#
+# unordered - It's a list of historical division names that did not have a number. Regardless if such names happened in history or not
+#             this option is available here mainly for a mods.
+#
+# ordered - Is a list of all historical names. 
+#           Numbers must start from 1 and up. 
+#           Numbers can't repeat in one scope.
+#           If you script the name for this group, at the same number (for example in a mod in another file), the name will be override.
+#           All arguments between the brackets must be separated by spaces. Each argument is wrapped in "quotas".
+#           1st argument = The name. It must contain either: 
+#                          %d (for decimal number placement)
+#                          %s (for string number placement - ROMAN numbers like XIV).
+#           2nd argument is optional = A localizable text describing this historical division. The text will be visible in the tooltip
+#                                      where you choose the historical division name.
+#           3rd argument is optional = An URL preferably pointing to the WIKI. It's a future feature that is not currently working in
+#                                      the current game version.
+
+NZL_INF_01 = 
+{
+	name = "Trooperss"
+
+	for_countries = { NZL }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	# Number reservation system will tie to another group.
+	#link_numbering_with = { GER_Gar_01 }
+
+	fallback_name = "%d New Eden Troopers"
+
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	unordered =
+	{
+		1 = { "%dnd 'Los Angeles' Troopers" }
+		2 = { "%dnd 'Utah' Troopers" }
+		3 = { "%drd 'Eden' Troopers" }
+		4 = { "%dnd 'Edom' Troopers" }
+		5 = { "%dnd 'Deus' Troopers" }
+		6 = { "%dth 'Deseret' Troopers " }
+		7 = { "%dth 'Cowboy' Troopers" }
+		8 = { "%dth 'Helghast' Troopers" }
+		9 = { "%dth 'Auckland' Troopers" }
+		10 = { "%dth 'Zeeland' Troopers" }
+		11 = { "%dth 'Oceania' Troopers" }
+		12 = { "%dth 'Australasia' Troopers" }
+		13 = { "%dth 'Tsunami' Troopers" }
+		14 = { "%dth 'Hurricane' Troopers" }
+		15 = { "%dth 'Scrapyard' Troopers" }
+		16 = { "%dth 'Salt Lake City' Troopers" }
+		17 = { "%dth 'Dante' Troopers" }
+		18 = { "%dth 'Brigham' Troopers" }
+		19 = { "%dth 'Graham' Troopers" }
+		20 = { "%dth 'Young' Troopers" }
+		21 = { "%dst 'Christ' Troopers" }
+		22 = { "%dnd 'John' Troopers" }
+		23 = { "%drd 'Romney' Troopers" }
+		24 = { "%dth 'Ezekiel' Troopers" }
+		25 = { "%dth 'Revelations' Troopers" }
+		26 = { "%dth 'Leviticus' Troopers" }
+		27 = { "%dth 'Cathedral' Troopers" }
+		28 = { "%dth 'Church' Troopers" }
+		29 = { "%dth 'Exodus' Troopers" }
+
+	}
+}
+
+NZL_CAV_01 = 
+{
+	name = "Cavalry Divisions"
+
+	for_countries = { L }
+
+	can_use = { always = yes }
+
+	division_types = { "cavalry" }
+
+	# Number reservation system will tie to another group.
+	#link_numbering_with = { GER_Gar_01 }
+
+	fallback_name = "%d NZL Cavalry Division"
+
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered =
+	{
+		1 = { "%dst  'Equus' Cavalry Division" }
+		2 = { "%dnd  'Eques' Cavalry Division" }
+		3 = { "%drd  'Equites' Cavalry Division" }
+		4 = { "%dth  'Minotaurus' Cavalry Division" }
+		5 = { "%dth  'Taurus' Cavalry Division" }
+		6 = { "%dth  'Cavalier' Cavalry Division" }
+		7 = { "%dth  'Knight' Cavalry Division" }
+		8 = { "%dth  'Paladin' Cavalry Division" }
+		9 = { "%dth  'Dei Centurio' Cavalry Division" }
+		10 = { "%dth 'Horseback' Cavalry Division" }
+		11 = { "%dth 'Tamerlane' Cavalry Division" }
+		12 = { "%dth 'Genghis Khan' Cavalry Division" }
+		13 = { "%dth  Cavalry Division" }
+		14 = { "%dth  Cavalry Division" }
+		15 = { "%dth  Cavalry Division" }
+		16 = { "%dth  Cavalry Division" }
+		17 = { "%dth  Cavalry Division" }
+		18 = { "%dth  Cavalry Division" }
+		19 = { "%dth  Cavalry Division" }
+		20 = { "%dth  Cavalry Division" }
+		21 = { "%dst  Cavalry Division" }
+		22 = { "%dnd  Cavalry Division" }
+		23 = { "%drd  Cavalry Division" }
+		24 = { "%dth  Cavalry Division" }
+		25 = { "%dth  Cavalry Division" }
+		26 = { "%dth  Cavalry Division" }
+		27 = { "%dth  Cavalry Division" }
+		28 = { "%dth  Cavalry Division" }
+		29 = { "%dth  Cavalry Division" }
+		30 = { "%dth  Cavalry Division" }
+		31 = { "%dst  Cavalry Division" }
+		32 = { "%dnd  Cavalry Division" }
+		33 = { "%drd  Cavalry Division" }
+		34 = { "%dth  Cavalry Division" }
+		35 = { "%dth  Cavalry Division" }
+		36 = { "%dth  Cavalry Division" }
+		37 = { "%dth  Cavalry Division" }
+		38 = { "%dth  Cavalry Division" }
+		39 = { "%dth  Cavalry Division" }
+		40 = { "%dth  Cavalry Division" }
+		41 = { "%dst  Cavalry Division" }
+		42 = { "%dnd  Cavalry Division" }
+		43 = { "%drd  Cavalry Division" }
+		44 = { "%dth  Cavalry Division" }
+		45 = { "%dth  Cavalry Division" }
+		46 = { "%dth  Cavalry Division" }
+		47 = { "%dth  Cavalry Division" }
+		48 = { "%dth  Cavalry Division" }
+		49 = { "%dth  Cavalry Division" }
+		51 = { "%dst  Cavalry Division" }
+		52 = { "%dnd  Cavalry Division" }
+		53 = { "%drd  Cavalry Division" }
+		54 = { "%dth  Cavalry Division" }
+		55 = { "%dth  Cavalry Division" }
+		56 = { "%dth  'Road to' Cavalry Division" }		
+
+		# L didn't have any cavalry divisions historically.  Large list is because of cav's suppression role in-game.
+	}
+}
+
+NZL_MOT_01 = 
+{
+	name = "Motorised Divisions"
+
+	for_countries = { L }
+
+	can_use = { always = yes }
+
+	division_types = { "motorized" }
+
+	# Number reservation system will tie to another group.
+	link_numbering_with = { NZL_CAV_01  }
+
+	fallback_name = "%d Motor Division"
+
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered =
+	{
+		1 = { "%dst  Motor Division" }
+		2 = { "%dnd  Motor Division" }
+		3 = { "%drd  Motor Division" }
+		4 = { "%dth  Motor Division" }
+		5 = { "%dth  Motor Division" }
+		6 = { "%dth  Motor Division" }
+		7 = { "%dth  Motor Division" }
+		8 = { "%dth  Motor Division" }
+		9 = { "%dth  Motor Division" }
+		10 = { "%dth  Motor Division" }
+		11 = { "%dth  Motor Division" }
+		12 = { "%dth  Motor Division" }
+		13 = { "%dth  Motor Division" }
+		14 = { "%dth  Motor Division" }
+		15 = { "%dth  Motor Division" }
+		16 = { "%dth  Motor Division" }
+		17 = { "%dth  Motor Division" }
+		18 = { "%dth  Motor Division" }
+		19 = { "%dth  Motor Division" }
+		20 = { "%dth  Motor Division" }
+		21 = { "%dst  Motor Division" }
+		22 = { "%dnd  Motor Division" }
+		23 = { "%drd  Motor Division" }
+
+		# L didn't have any motorized divisions historically.  Based on AST Cav/Mot/Arm structure.
+	}
+}
+
+NZL_ARM_01 = 
+{
+	name = "Armoured Divisions"
+
+	for_countries = { NZL }
+
+	can_use = { always = yes }
+
+	division_types = { "light_armor" "medium_armor" "heavy_armor" "modern_armor" }
+
+	# Number reservation system will tie to another group.
+	link_numbering_with = { NZL_CAV_01  }
+
+	fallback_name = "%d Armoured Division"
+
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered =
+	{
+		1 = { "%dst  Armoured Division" }
+		2 = { "%dnd  Armoured Division" }
+		3 = { "%drd  Armoured Division" }
+		4 = { "%dth  Armoured Division" }
+		5 = { "%dth  Armoured Division" }
+		6 = { "%dth  Armoured Division" }
+		7 = { "%dth  Armoured Division" }
+		8 = { "%dth  Armoured Division" }
+		9 = { "%dth  Armoured Division" }
+		10 = { "%dth  Armoured Division" }
+		11 = { "%dth  Armoured Division" }
+		12 = { "%dth  Armoured Division" }
+		13 = { "%dth  Armoured Division" }
+		14 = { "%dth  Armoured Division" }
+		15 = { "%dth  Armoured Division" }
+		16 = { "%dth  Armoured Division" }
+		17 = { "%dth  Armoured Division" }
+		18 = { "%dth  Armoured Division" }
+		19 = { "%dth  Armoured Division" }
+		20 = { "%dth  Armoured Division" }
+		21 = { "%dst  Armoured Division" }
+		22 = { "%dnd  Armoured Division" }
+		23 = { "%drd  Armoured Division" }
+
+		# NZL didn't have any armored divisions historically.  Based on AST Cav/Mot/Arm structure.
+	}
+}
+
+NZL_MEC_01 = 
+{
+	name = "Mechanised Divisions"
+
+	for_countries = { NZL }
+
+	can_use = { always = yes }
+
+	division_types = { "mechanized"  }
+
+	# Number reservation system will tie to another group.
+	link_numbering_with = { L_CAV_01 }
+
+	fallback_name = "%d Mechanised Division"
+
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered =
+	{
+		1 = { "%dst  Mechanised Division" }
+		2 = { "%dnd  Mechanised Division" }
+		3 = { "%drd  Mechanised Division" }
+		4 = { "%dth  Mechanised Division" }
+		5 = { "%dth  Mechanised Division" }
+		6 = { "%dth  Mechanised Division" }
+		7 = { "%dth  Mechanised Division" }
+		8 = { "%dth  Mechanised Division" }
+		9 = { "%dth  Mechanised Division" }
+		10 = { "%dth  Mechanised Division" }
+		11 = { "%dth  Mechanised Division" }
+		12 = { "%dth  Mechanised Division" }
+		13 = { "%dth  Mechanised Division" }
+		14 = { "%dth  Mechanised Division" }
+		15 = { "%dth  Mechanised Division" }
+		16 = { "%dth  Mechanised Division" }
+		17 = { "%dth  Mechanised Division" }
+		18 = { "%dth  Mechanised Division" }
+		19 = { "%dth  Mechanised Division" }
+		20 = { "%dth  Mechanised Division" }
+		21 = { "%dst  Mechanised Division" }
+		22 = { "%dnd  Mechanised Division" }
+		23 = { "%drd  Mechanised Division" }
+
+		# NZL didn't have any armored divisions historically.  Based on AST Cav/Mot/Arm structure.
+	}
+}
+
+NZL_GAR_01 = 
+{
+	name = "Garrison Divisions"
+
+	for_countries = { NZL }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	# Number reservation system will tie to another group.
+	link_numbering_with = { L_INF_01 }
+
+	fallback_name = "%d Troopers"
+
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered =
+	{
+		1 = { "%dst 'Northern' Troopers" }
+		4 = { "%dth 'Central' Troopers" }
+		5 = { "%dth 'Southern' Troopers" }
+		6 = { "%dth Troopers" } # Historically a 'fake' division
+		7 = { "%dth Troopers" }
+		8 = { "%dth Troopers" }
+		9 = { "%dth Troopers" }
+		10 = { "%dth Troopers" }
+		11 = { "%dth Troopers" }
+		12 = { "%dth Troopers" }
+		13 = { "%dth Troopers" }
+		14 = { "%dth Troopers" }
+		15 = { "%dth Troopers" }
+		16 = { "%dth Troopers" }
+		17 = { "%dth Troopers" }
+		18 = { "%dth Troopers" }
+		19 = { "%dth Troopers" }
+		20 = { "%dth Troopers" }
+		21 = { "%dst Troopers" }
+		22 = { "%dnd Troopers" }
+		23 = { "%drd Troopers" }
+		24 = { "%dth Troopers" }
+		25 = { "%dth Troopers" }
+		26 = { "%dth Troopers" }
+		27 = { "%dth Troopers" }
+		28 = { "%dth Troopers" }
+		29 = { "%dth Troopers" }
+		30 = { "%dth Troopers" }
+		31 = { "%dst Troopers" }
+		32 = { "%dnd Troopers" }
+		33 = { "%drd Troopers" }
+		34 = { "%dth Troopers" }
+		35 = { "%dth Troopers" }
+		36 = { "%dth Troopers" }
+		37 = { "%dth Troopers" }
+		38 = { "%dth Troopers" }
+		39 = { "%dth Troopers" }
+		40 = { "%dth Troopers" }
+		41 = { "%dst Troopers" }
+		42 = { "%dnd Troopers" }
+		43 = { "%drd Troopers" }
+		44 = { "%dth Troopers" }
+		45 = { "%dth Troopers" }
+		46 = { "%dth Troopers" }
+		47 = { "%dth Troopers" }
+		48 = { "%dth Troopers" }
+		49 = { "%dth Troopers" }
+		51 = { "%dst Troopers" }
+		52 = { "%dnd Troopers" }
+		53 = { "%drd Troopers" }
+
+		# These division names represent the formation of the divisions in Nov-1941 from the Military District Forces in those areas previously, which are covered by L_MIL_01.  The idea is that switching the template from L_MIL_01 to L_GAR_01 will give these divisions their historic names.
+	}
+}
+
+NZL_MIL_01 = 
+{
+	name = "Militia Divisions"
+
+	for_countries = { NZL }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	# Number reservation system will tie to another group.
+	link_numbering_with = { L_INF_01 }
+
+	fallback_name = "%d Military District"
+
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered =
+	{
+		1 = { "Northern Military District" }
+		4 = { "Central Military District" }
+		5 = { "Southern Military District" }
+		6 = { "%dth Military District" } # Historically a 'fake' division
+		7 = { "%dth Military District" }
+		8 = { "%dth Military District" }
+		9 = { "%dth Military District" }
+		10 = { "%dth Military District" }
+		11 = { "%dth Military District" }
+		12 = { "%dth Military District" }
+		13 = { "%dth Military District" }
+		14 = { "%dth Military District" }
+		15 = { "%dth Military District" }
+		16 = { "%dth Military District" }
+		17 = { "%dth Military District" }
+		18 = { "%dth Military District" }
+		19 = { "%dth Military District" }
+		20 = { "%dth Military District" }
+		21 = { "%dst Military District" }
+		22 = { "%dnd Military District" }
+		23 = { "%drd Military District" }
+		24 = { "%dth Military District" }
+		25 = { "%dth Military District" }
+		26 = { "%dth Military District" }
+		27 = { "%dth Military District" }
+		28 = { "%dth Military District" }
+		29 = { "%dth Military District" }
+		30 = { "%dth Military District" }
+		31 = { "%dst Military District" }
+		32 = { "%dnd Military District" }
+		33 = { "%drd Military District" }
+		34 = { "%dth Military District" }
+		35 = { "%dth Military District" }
+		36 = { "%dth Military District" }
+		37 = { "%dth Military District" }
+		38 = { "%dth Military District" }
+		39 = { "%dth Military District" }
+		40 = { "%dth Military District" }
+		41 = { "%dst Military District" }
+		42 = { "%dnd Military District" }
+		43 = { "%drd Military District" }
+		44 = { "%dth Military District" }
+		45 = { "%dth Military District" }
+		46 = { "%dth Military District" }
+		47 = { "%dth Military District" }
+		48 = { "%dth Military District" }
+		49 = { "%dth Military District" }
+		50 = { "%dth Military District" }
+		51 = { "%dst Military District" }
+		52 = { "%dnd Military District" }
+		53 = { "%drd Military District" }
+
+		# The OOB file for NZL has three 'Military District' formations, which later (November 1941) became the Northern, Central and Southern Infanstry Divisions, which were then renamed the 1st, 4th and 5th Trooperss.  The way it's set up here is that the starting units are MIL with this set-up, but if the namelist is changed to Garrison, those units should switch to their historic names (or appropriate ahistoric names).
+	}
+}
+
+NZL_MAR_01 = 
+{
+	name = "Marine Divisions"
+
+	for_countries = { NZL }
+
+	can_use = { always = yes }
+
+	division_types = { "marine" }
+
+	# Number reservation system will tie to another group.
+	#link_numbering_with = { L_GAR_01 }
+
+	fallback_name = "%d Marine Division"
+
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered =
+	{
+		1 = { "%dst  Marine Division" }
+		2 = { "%dnd  Marine Division" }
+		3 = { "%drd  Marine Division" }
+		4 = { "%dth  Marine Division" }
+		5 = { "%dth  Marine Division" }
+		6 = { "%dth  Marine Division" }
+		7 = { "%dth  Marine Division" }
+		8 = { "%dth  Marine Division" }
+		9 = { "%dth  Marine Division" }
+		10 = { "%dth  Marine Division" }
+		11 = { "%dth  Marine Division" }
+		12 = { "%dth  Marine Division" }
+		13 = { "%dth  Marine Division" }
+		14 = { "%dth  Marine Division" }
+		15 = { "%dth  Marine Division" }
+		16 = { "%dth  Marine Division" }
+		17 = { "%dth  Marine Division" }
+		18 = { "%dth  Marine Division" }
+		19 = { "%dth  Marine Division" }
+		20 = { "%dth  Marine Division" }
+		21 = { "%dst  Marine Division" }
+		22 = { "%dnd  Marine Division" }
+		23 = { "%drd  Marine Division" }
+		24 = { "%dth  Marine Division" }
+		25 = { "%dth  Marine Division" }
+		26 = { "%dth  Marine Division" }
+		27 = { "%dth  Marine Division" }
+		28 = { "%dth  Marine Division" }
+		29 = { "%dth  Marine Division" }
+		30 = { "%dth  Marine Division" }
+
+		# NZL didn't have any Marine divisions, these are all fictional.
+	}
+}
+
+NZL_MTN_01 = 
+{
+	name = "Mountain Divisions"
+
+	for_countries = { NZL }
+
+	can_use = { always = yes }
+
+	division_types = { "mountaineers" }
+
+	# Number reservation system will tie to another group.
+	link_numbering_with = { L_INF_01 }
+
+	fallback_name = "%d Troopers"
+
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered =
+	{
+		2 = { "%dnd  Troopers" }
+		3 = { "%drd  Troopers" }
+		6 = { "%dth  Troopers" }
+		7 = { "%dth  Troopers" }
+		8 = { "%dth  Troopers" }
+		9 = { "%dth  Troopers" }
+		10 = { "%dth  Troopers" }
+		11 = { "%dth  Troopers" }
+		12 = { "%dth  Troopers" }
+		13 = { "%dth  Troopers" }
+		14 = { "%dth  Troopers" }
+		15 = { "%dth  Troopers" }
+		16 = { "%dth  Troopers" }
+		17 = { "%dth  Troopers" }
+		18 = { "%dth  Troopers" }
+		19 = { "%dth  Troopers" }
+		20 = { "%dth  Troopers" }
+		21 = { "%dst  Troopers" }
+		22 = { "%dnd  Troopers" }
+		23 = { "%drd  Troopers" }
+		24 = { "%dth  Troopers" }
+		25 = { "%dth  Troopers" }
+		26 = { "%dth  Troopers" }
+		27 = { "%dth  Troopers" }
+		28 = { "%dth  Troopers" }
+		29 = { "%dth  Troopers" }
+		30 = { "%dth  Troopers" }
+		31 = { "%dst  Troopers" }
+		32 = { "%dnd  Troopers" }
+		33 = { "%drd  Troopers" }
+		34 = { "%dth  Troopers" }
+		35 = { "%dth  Troopers" }
+		36 = { "%dth  Troopers" }
+		37 = { "%dth  Troopers" }
+		38 = { "%dth  Troopers" }
+		39 = { "%dth  Troopers" }
+		40 = { "%dth  Troopers" }
+		41 = { "%dst  Troopers" }
+		42 = { "%dnd  Troopers" }
+		43 = { "%drd  Troopers" }
+		44 = { "%dth  Troopers" }
+		45 = { "%dth  Troopers" }
+		46 = { "%dth  Troopers" }
+		47 = { "%dth  Troopers" }
+		48 = { "%dth  Troopers" }
+		49 = { "%dth  Troopers" }
+		50 = { "%dth  Troopers" }
+		51 = { "%dst  Troopers" }
+		52 = { "%dnd  Troopers" }
+		53 = { "%drd  Troopers" }
+
+		# NZL didn't have any Mountain divisions, have created an overlapping identical namelist with infantry - not sure if necessary or something else desired?
+	}
+}
+
+NZL_PAR_01 = 
+{
+	name = "Airborne Divisions"
+
+	for_countries = { NZL }
+
+	can_use = { always = yes }
+
+	division_types = { "paratrooper" }
+
+	# Number reservation system will tie to another group.
+	#link_numbering_with = { L_GAR_01 }
+
+	fallback_name = "%d Airborne Division"
+
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered =
+	{
+		1 = { "%dst  Airborne Division" }
+		2 = { "%dnd  Airborne Division" }
+		3 = { "%drd  Airborne Division" }
+		4 = { "%dth  Airborne Division" }
+		5 = { "%dth  Airborne Division" }
+		6 = { "%dth  Airborne Division" }
+		7 = { "%dth  Airborne Division" }
+		8 = { "%dth  Airborne Division" }
+		9 = { "%dth  Airborne Division" }
+		10 = { "%dth  Airborne Division" }
+		11 = { "%dth  Airborne Division" }
+		12 = { "%dth  Airborne Division" }
+		13 = { "%dth  Airborne Division" }
+		14 = { "%dth  Airborne Division" }
+		15 = { "%dth  Airborne Division" }
+		16 = { "%dth  Airborne Division" }
+		17 = { "%dth  Airborne Division" }
+		18 = { "%dth  Airborne Division" }
+		19 = { "%dth  Airborne Division" }
+		20 = { "%dth  Airborne Division" }
+		21 = { "%dst  Airborne Division" }
+		22 = { "%dnd  Airborne Division" }
+		23 = { "%drd  Airborne Division" }
+		24 = { "%dth  Airborne Division" }
+		25 = { "%dth  Airborne Division" }
+		26 = { "%dth  Airborne Division" }
+		27 = { "%dth  Airborne Division" }
+		28 = { "%dth  Airborne Division" }
+		29 = { "%dth  Airborne Division" }
+		30 = { "%dth  Airborne Division" }
+
+		# NZL didn't have any Marine divisions, these are all fictional.
+	}
+}
